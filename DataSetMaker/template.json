@@ -1,0 +1,94 @@
+{
+    "stocks":[
+        {
+            "stockName":"HEKTS",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"YUNSA",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"EREGL",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"MAKTK",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"KRDMD",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"THYAO",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"TUPRS",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"PETKM",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"ALKIM",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"ISCTR",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"GARAN",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"TCELL",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"ASELS",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"ARCLK",
+            "parses":[
+
+            ]
+        },
+        {
+            "stockName":"EKGYO",
+            "parses":[
+
+            ]
+        }
+    ]
+}
