@@ -1,8 +1,8 @@
 import json
-import parser
+import myParser as parser 
 import time
 
-fileName = "/Users/fuat/Desktop/esad/coding/StockAI/DataSetMaker/deneme.json"
+fileName = "deneme.json"
 
 stocks = ["YUNSA","EREGL","MAKTK","KRDMD","THYAO","TUPRS","PETKM","ALKIM","ISCTR","GARAN","TCELL","ARCLK","EKGYO","ASELS","HEKTS"]
 
