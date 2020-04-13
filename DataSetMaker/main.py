@@ -2,8 +2,8 @@ import json
 import myParser as parser 
 import time
 
-fileName = "13.04.2020.json"
-#fileName = "deneme.json"
+#fileName = "13.04.2020.json"
+fileName = "DataSetMaker/deneme.json"
 stocks = ["HEKTS","YUNSA","EREGL","MAKTK","KRDMD","THYAO","TUPRS","PETKM","ALKIM","ISCTR","GARAN","TCELL","ASELS","ARCLK","EKGYO"]
 
 #lastValues = [[[]]]*15
@@ -26,11 +26,13 @@ try:
                 }
                 data.get("stocks")[i].get("parses").append(newParse)
             if currentPrice == -1:
-                errNo = data["stocks"][i]["errors"]
-                data["stocks"][i]["errors"] = errNo+1
+                '''errNo = data["stocks"][i]["errors"]
+                data["stocks"][i]["errors"] = errNo+1'''
+        print("DON'T CLOSE THE PROGRAM, SSAVING THE FILE")
         json_write = open(fileName,"w")
         json.dump(data,json_write,indent = 4)
         json_write.close()
+        print("SAVED")
         print("===========================================================")
         time.sleep(30)
         
