@@ -2,31 +2,36 @@ import json
 import myParser as parser 
 import time
 
-fileName = "deneme.json"
+fileName = "13.04.2020.json"
+#fileName = "deneme.json"
+stocks = ["HEKTS","YUNSA","EREGL","MAKTK","KRDMD","THYAO","TUPRS","PETKM","ALKIM","ISCTR","GARAN","TCELL","ASELS","ARCLK","EKGYO"]
 
-stocks = ["YUNSA","EREGL","MAKTK","KRDMD","THYAO","TUPRS","PETKM","ALKIM","ISCTR","GARAN","TCELL","ARCLK","EKGYO","ASELS","HEKTS"]
-
+lastKademe = []
 try:
     while True:
         json_read = open(fileName,"r")
         data = json.load(json_read)
         json_read.close()
 
-        for i in range(0,len(stocks)-2):
+        for i in range(0,len(stocks)):
             stockName = stocks[i]
             print(stockName)
             currentPrice, table = parser.parse(stockName)
-            if currentPrice != -1:
+            if currentPrice != -1 and lastKademe != table:
+                lastKademe=table
                 newParse = {
                     "kademeDeğerleri":table,
                     "stockPrice":currentPrice
                 }
                 data.get("stocks")[i].get("parses").append(newParse)
-        
+            if currentPrice == -1:
+                errNo = data["stocks"][i]["errors"]
+                data["stocks"][i]["errors"] = errNo+1
         json_write = open(fileName,"w")
         json.dump(data,json_write,indent = 4)
         json_write.close()
-        time.sleep(900)
+        print("================================================")
+        time.sleep(30)
         
 except KeyboardInterrupt:
     print("User stopped the program.")
