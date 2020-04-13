@@ -6,7 +6,7 @@ fileName = "13.04.2020.json"
 #fileName = "deneme.json"
 stocks = ["HEKTS","YUNSA","EREGL","MAKTK","KRDMD","THYAO","TUPRS","PETKM","ALKIM","ISCTR","GARAN","TCELL","ASELS","ARCLK","EKGYO"]
 
-lastKademe = []
+#lastValues = [[[]]]*15
 try:
     while True:
         json_read = open(fileName,"r")
@@ -15,10 +15,11 @@ try:
 
         for i in range(0,len(stocks)):
             stockName = stocks[i]
-            print(stockName)
+            print(stockName,end=" ",)
             currentPrice, table = parser.parse(stockName)
-            if currentPrice != -1 and lastKademe != table:
-                lastKademe=table
+            if currentPrice != -1: #and lastValues[i] != table:
+                #print("new reading detected")
+                #lastValues[i]=table
                 newParse = {
                     "kademeDeğerleri":table,
                     "stockPrice":currentPrice
@@ -30,7 +31,7 @@ try:
         json_write = open(fileName,"w")
         json.dump(data,json_write,indent = 4)
         json_write.close()
-        print("================================================")
+        print("===========================================================")
         time.sleep(30)
         
 except KeyboardInterrupt:
