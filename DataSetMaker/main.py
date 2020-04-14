@@ -30,7 +30,7 @@ try:
                 data["stocks"][i]["errors"] = errNo+1'''
         print("DON'T CLOSE THE PROGRAM, SSAVING THE FILE")
         json_write = open(fileName,"w")
-        json.dump(data,json_write,indent = 4)
+        json.dump(data,json_write)
         json_write.close()
         print("SAVED")
         print("===========================================================")
